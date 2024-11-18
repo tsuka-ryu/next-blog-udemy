@@ -1,9 +1,13 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function ThemeCom({ children }: PropsWithChildren) {
+export default function ThemeCom({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
